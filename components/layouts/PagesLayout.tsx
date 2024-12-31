@@ -32,6 +32,7 @@ import '@/context/user/init'
 import '@/context/order/init'
 import '@/context/profile/init'
 import '@/context/passwordRestore/init'
+import { AnalyticScripts } from '../modules/Analytics'
 
 const PagesLayout = ({ children }: { children: React.ReactNode }) => {
   const [isClient, setIsClient] = useState(false)
@@ -128,6 +129,8 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
               </motion.div>
             )}
             <Toaster position='top-center' reverseOrder={false} />
+
+            <AnalyticScripts />
           </body>
         </html>
       ) : (
