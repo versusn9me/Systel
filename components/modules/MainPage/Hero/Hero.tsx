@@ -54,7 +54,7 @@ const Hero = () => {
             modifier: 2.5,
           }}
           slidesPerView='auto'
-          initialSlide={2}
+          initialSlide={1}
           autoplay
           loop
           onClick={handleSlideClick}
