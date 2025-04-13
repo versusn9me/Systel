@@ -22,7 +22,7 @@ const ProductSizesItem = ({
       style={{
         backgroundColor:
           currentSize[0] === selectedSize
-            ? '#9466FF'
+            ? '#f29011'
             : 'rgba(255, 255, 255, 0.10)',
       }}
     >

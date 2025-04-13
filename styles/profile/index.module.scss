@@ -253,11 +253,11 @@
   }
 
   &__logout {
-    background-color: #9466FF;
+    background-color: #f29011;
 
     &:hover {
       transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out;
-      background-color: #70F;
+      background-color: #f29011;
       box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.20), 0px 0px 20px 0px rgba(0, 0, 0, 0.10);
     }
   }

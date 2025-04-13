@@ -149,7 +149,7 @@
 
     a {
       text-decoration: none;
-      color: #9466FF;
+      color: #f29011;
     }
   }
 
@@ -177,7 +177,7 @@
 
       &:first-child {
         margin-right: 20px;
-        background-color: #9466FF;
+        background-color: #f29011;
         transition: background-color .2s ease-in-out;
 
         @media (max-width: 590px) {
@@ -186,18 +186,18 @@
         }
 
         &:hover {
-          background-color: #70f;
+          background-color: #f29011;
           transition: background-color .2s ease-in-out;
         }
       }
 
       &:last-child {
         transition: background-color .2s ease-in-out;
-        border: 2px solid #9466FF;
+        border: 2px solid #f29011;
         transition: background-color .2s ease-in-out;
 
         &:hover {
-          background-color: #9466FF;
+          background-color: #f29011;
           transition: background-color .2s ease-in-out;
         }
       }

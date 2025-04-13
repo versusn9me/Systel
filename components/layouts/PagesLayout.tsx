@@ -94,7 +94,7 @@ const PagesLayout = ({ children }: { children: React.ReactNode }) => {
         // >
         <html lang='en'>
           <body>
-            <Next13ProgressBar height='4px' color='#9466FF' showOnShallow />
+            <Next13ProgressBar height='4px' color='#f29011' showOnShallow />
             {shouldShowContent && <Layout>{children}</Layout>}
             <div
               className={`quick-view-modal-overlay ${

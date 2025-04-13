@@ -4,6 +4,7 @@ export const productsWithoutSizes = [
   'notebook',
   'promotional-souvenirs',
   'business-souvenirs',
+  
 ]
 
 export const productTypes = [

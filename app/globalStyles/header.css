@@ -16,7 +16,6 @@
 .header__logo {
   position: absolute;
   left: 50%;
-  top: 8px;
   transform: translateX(-65%);
 }
 
@@ -70,7 +69,7 @@
 
 .header__links__item__btn:hover::before {
   transition: background-color 0.2s ease-in-out;
-  background-color: #9466FF;
+  background-color: #f29011;
 }
 
 .header__links__item__btn {
@@ -112,11 +111,11 @@
 
 .header__burger:hover::before {
   transition: background-color 0.2s ease-in-out;
-  background-color: #9466FF;
+  background-color: #f29011;
 }
 
 .header__burger:hover {
-  color: #9466FF;
+  color: #f29011;
   transition: .2s ease-in-out color;
 }
 
