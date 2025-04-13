@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     const { reqBody } = await getDbAndReqBody(clientPromise, req)
 
     await sendMail(
-      'Rostelecom',
+      'Systel',
       reqBody.email,
       `Ссылка для сброса пароля: ${process.env.NEXT_PUBLIC_CLIENT_BASE_URL}/password-restore`
     )
