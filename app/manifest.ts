@@ -2,10 +2,10 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Rostelecom Application',
-    short_name: 'Rostelecom App',
+    name: 'systel Application',
+    short_name: 'systel App',
     description:
-      'Rostelecom магазин одежды, аксесуаров, концелярии и сувениров',
+      'systel магазин техники и т.д',
     start_url: '/',
     background_color: '#fff',
     theme_color: '#fff',
