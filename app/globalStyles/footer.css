@@ -33,7 +33,12 @@
   transition: color .2s ease-in-out;
 }
 
-
+.footer__contacts a, .footer__links a {
+  color: #E8E9EA;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+}
 
 .footer__contacts span:first-child, .footer__links span:first-child {
   margin-bottom: 12px;
