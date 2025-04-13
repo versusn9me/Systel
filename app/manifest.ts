@@ -4,8 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'systel Application',
     short_name: 'systel App',
-    description:
-      'systel магазин техники и т.д',
+    description: 'systel магазин техники и т.д',
     start_url: '/',
     background_color: '#fff',
     theme_color: '#fff',
