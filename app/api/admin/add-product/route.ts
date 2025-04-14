@@ -25,7 +25,7 @@ export async function POST(req: Request) {
       ...reqBody,
       images: images
         ? images.map((img: {imgId: string}) => ({
-          url: `${process.env.https://systel-8xuv.vercel.app/api/images}?id=${img.imgId}`,
+          url: `${process.env.NEXT_PUBLIC_IMAGE_BASE_URLimages}?id=${img.imgId}`,
           desc: reqBody.name,
         }))
         : reqBody.images,
