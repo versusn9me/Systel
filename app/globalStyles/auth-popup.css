@@ -17,7 +17,7 @@
 }
 
 .auth-popup__close::before {
-  background-color: #E8E9EA;
+  background-color: #fff;
   content: '';
   height: 100%;
   width: 100%;

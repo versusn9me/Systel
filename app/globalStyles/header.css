@@ -2,7 +2,7 @@
   position: relative;
   z-index: 3;
   background-color: #E8E9dA;
-  box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.2), 0px 0px 8px 0px rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 2px 4px 0px rgba(255, 255, 255, 0.2), 0px 0px 8px 0px rgba(223, 215, 215, 0.1);
 }
 
 .header__container {
@@ -32,7 +32,7 @@
 }
 
 .header__links__item__btn::before {
-  background-color: #E8E9EA;
+  background-color: #000;
   content: '';
   height: 100%;
   width: 100%;
@@ -90,14 +90,14 @@
 }
 
 .header__burger {
-  color: #E8E9EA;
+  color: #000;
   font-size: 24px;
   transition: .2s ease-in-out color;
   font-weight: 500;
 }
 
 .header__burger::before {
-  background-color: #E8E9EA;
+  background-color: #000;
   content: '';
   height: 25px;
   width: 25px;

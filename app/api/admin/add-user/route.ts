@@ -37,7 +37,7 @@ export async function POST(req: Request) {
       ...reqBody,
       image: {
         url: image
-          ? `${process.env.NEXT_PUBLIC_IMAGE_BASE_URL}?id=${image.imgId}`
+          ? `${process.env.https://systel-8xuv.vercel.app/api/images}?id=${image.imgId}`
           : '',
         desc: image ? reqBody.name : '',
       },

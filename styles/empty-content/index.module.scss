@@ -30,7 +30,7 @@
     z-index: -1;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #242C39;
+    color: #fff;
     font-size: 376px;
     font-weight: 700;
 
@@ -111,7 +111,7 @@
 
     span {
       display: block;
-      color: #F1F3F5;
+      color: #242c39;
       text-align: center;
       font-size: 42px;
       font-weight: 700;
@@ -134,7 +134,7 @@
 
   &__subtitle {
     margin-bottom: 20px;
-    color: #E8E9EA;
+    color: #242c39;
     font-size: 22px;
     font-weight: 700;
     text-align: center;
@@ -158,7 +158,7 @@
     margin-bottom: 64px;
     max-width: 360px;
     text-align: center;
-    color: #E8E9EA;
+    color: #242c39;
     line-height: 24px;
 
     @media (max-width: 1370px) {
@@ -187,7 +187,7 @@
     a {
       text-decoration: none;
       border-radius: 50px;
-      color: #F1F3F5;
+      color: #242c39;
       font-weight: 500;
       padding: 12px 35px;
 
