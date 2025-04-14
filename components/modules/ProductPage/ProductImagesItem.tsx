@@ -1,9 +1,9 @@
-import { IProductImagesItemProps } from '@/types/product';
-import useImagePreloader from '@/hooks/useImagePreloader';
-import styles from '@/styles/product/index.module.scss';
+import { IProductImagesItemProps } from '@/types/product'
+import useImagePreloader from '@/hooks/useImagePreloader'
+import styles from '@/styles/product/index.module.scss'
 
 const ProductImagesItem = ({ image, imgSize }: IProductImagesItemProps) => {
-  const { handleLoadingImageComplete, imgSpinner } = useImagePreloader();
+  const { handleLoadingImageComplete, imgSpinner } = useImagePreloader()
 
   return (
     <li
@@ -20,11 +20,11 @@ const ProductImagesItem = ({ image, imgSize }: IProductImagesItemProps) => {
           !imgSpinner ? 'opacity-100' : ''
         }`}
         onLoad={handleLoadingImageComplete}
-        loading="lazy"
+        loading='lazy'
         style={{ width: imgSize, height: imgSize, objectFit: 'cover' }}
       />
     </li>
-  );
-};
+  )
+}
 
-export default ProductImagesItem;
+export default ProductImagesItem

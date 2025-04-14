@@ -15,10 +15,10 @@ export const useProductsByCollection = (collection: string) => {
     lang === 'ru'
       ? `${langText} «${capitalizedCollection}»`
       : [
-        langText.slice(0, 17),
-        ` «${capitalizedCollection}»`,
-        langText.slice(17),
-      ].join('')
+          langText.slice(0, 17),
+          ` «${capitalizedCollection}»`,
+          langText.slice(17),
+        ].join('')
 
   return { title, capitalizedCollection, products, spinner }
 }

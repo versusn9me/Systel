@@ -39,9 +39,13 @@ export default function Favorites() {
     if (paymentData.description && user.email) {
       let description = paymentData.description
 
-      if (paymentData.metadata && Object.values(paymentData.metadata).some((item) => !!item)) {
+      if (
+        paymentData.metadata &&
+        Object.values(paymentData.metadata).some((item) => !!item)
+      ) {
         const recipientData = Object.values(paymentData.metadata)
-          .filter((item) => !!item && typeof item === 'string').join(', ')
+          .filter((item) => !!item && typeof item === 'string')
+          .join(', ')
 
         description = `${description} Данные получателя: ${recipientData}`
       }
@@ -96,20 +100,20 @@ export default function Favorites() {
                     __html: spinner
                       ? translations[lang].common.loading
                       : `${translations[lang].payment_success.order_info
-                        .replace(
-                          '1-info',
-                          // eslint-disable-next-line max-len
-                          `<span className=${styles.payment_success__num}>№${paymentData.authorization_details?.rrn}</span>`
-                        )
-                        .replace(
-                          '2-info',
-                          `<span className=${styles.payment_success__price}>
+                          .replace(
+                            '1-info',
+                            // eslint-disable-next-line max-len
+                            `<span className=${styles.payment_success__num}>№${paymentData.authorization_details?.rrn}</span>`
+                          )
+                          .replace(
+                            '2-info',
+                            `<span className=${styles.payment_success__price}>
                       ${formatPrice(+(paymentData.amount?.value || 0)).replace(
-          /\s/g,
-          '\u00A0'
-        )}\u00A0₽
+                        /\s/g,
+                        '\u00A0'
+                      )}\u00A0₽
                     </span>`
-                        )}`,
+                          )}`,
                   }}
                 />
                 <p

@@ -29,7 +29,7 @@
     top: -110px;
     left: 50%;
     transform: translateX(-50%);
-    color: #242C39;
+    color: #242c39;
     font-size: 376px;
     font-weight: 700;
     z-index: -1;
@@ -77,7 +77,7 @@
   &__heading {
     margin: 0;
     margin-bottom: 80px;
-    color: #F1F3F5;
+    color: #f1f3f5;
     font-size: 42px;
     font-weight: 700;
 
@@ -101,7 +101,7 @@
     max-width: 700px;
     margin: 0;
     margin-bottom: 24px;
-    color: #E8E9EA;
+    color: #e8e9ea;
     font-size: 22px;
     font-weight: 700;
 
@@ -126,8 +126,8 @@
       }
     }
 
-    & span:last-child{
-      color: #16D9A6;
+    & span:last-child {
+      color: #16d9a6;
 
       @media (max-width: 590px) {
         font-size: 20px;
@@ -140,7 +140,7 @@
     margin-bottom: 64px;
     max-width: 412px;
     text-align: center;
-    color: #E8E9EA;
+    color: #e8e9ea;
 
     @media (max-width: 590px) {
       font-size: 14px;
@@ -166,7 +166,7 @@
       display: block;
       text-decoration: none;
       padding: 12px 35px;
-      color: #F1F3F5;
+      color: #f1f3f5;
       font-weight: 500;
       border-radius: 50px;
       text-align: center;
@@ -178,7 +178,7 @@
       &:first-child {
         margin-right: 20px;
         background-color: #f29011;
-        transition: background-color .2s ease-in-out;
+        transition: background-color 0.2s ease-in-out;
 
         @media (max-width: 590px) {
           margin-right: 0;
@@ -187,18 +187,18 @@
 
         &:hover {
           background-color: #f29011;
-          transition: background-color .2s ease-in-out;
+          transition: background-color 0.2s ease-in-out;
         }
       }
 
       &:last-child {
-        transition: background-color .2s ease-in-out;
+        transition: background-color 0.2s ease-in-out;
         border: 2px solid #f29011;
-        transition: background-color .2s ease-in-out;
+        transition: background-color 0.2s ease-in-out;
 
         &:hover {
           background-color: #f29011;
-          transition: background-color .2s ease-in-out;
+          transition: background-color 0.2s ease-in-out;
         }
       }
     }

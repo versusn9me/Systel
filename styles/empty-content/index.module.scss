@@ -204,7 +204,7 @@
     a:first-child {
       background-color: #f29011;
       margin-right: 20px;
-      transition: background-color .2s ease-in-out;
+      transition: background-color 0.2s ease-in-out;
 
       @media (max-width: 500px) {
         margin-right: 0;
@@ -212,7 +212,7 @@
       }
 
       &:hover {
-        transition: background-color .2s ease-in-out;
+        transition: background-color 0.2s ease-in-out;
         background-color: #f29011;
       }
     }
@@ -221,7 +221,7 @@
       border: 2px solid #f29011;
 
       &:hover {
-        transition: background-color .2s ease-in-out;
+        transition: background-color 0.2s ease-in-out;
         background-color: #f29011;
       }
     }

@@ -7,16 +7,18 @@ import HeadingWithCount from '@/components/elements/HeadingWithCount/HeadingWith
 import Breadcrumbs from '@/components/modules/Breadcrumbs/Breadcrumbs'
 import EmptyPageContent from '@/components/modules/EmptyPageContent/EmptyPageContent'
 import { basePropsForMotion } from '@/constants/motion'
-import {
-  getFavoriteItemsFx,
-} from '@/context/favorites'
+import { getFavoriteItemsFx } from '@/context/favorites'
 import { useBreadcrumbs } from '@/hooks/useBreadcrumbs'
 import { useGoodsByAuth } from '@/hooks/useGoodsByAuth'
 import { useLang } from '@/hooks/useLang'
 import FavoritesList from '@/components/modules/FavoritesPage/FavoritesList'
 import { isUserAuth } from '@/lib/utils/common'
 import { loginCheckFx } from '@/context/user'
-import { $favorites, $favoritesFromLS, $shouldShowEmptyFavorites } from '@/context/favorites/state'
+import {
+  $favorites,
+  $favoritesFromLS,
+  $shouldShowEmptyFavorites,
+} from '@/context/favorites/state'
 import cartSkeletonStyles from '@/styles/cart-skeleton/index.module.scss'
 import styles from '@/styles/favorites/index.module.scss'
 
@@ -52,9 +54,7 @@ const FavoritesPage = () => {
               >
                 {Array.from(new Array(3)).map((_, i) => (
                   <li key={i} className={cartSkeletonStyles.skeleton__item}>
-                    <div
-                      className={cartSkeletonStyles.skeleton__item__light}
-                    />
+                    <div className={cartSkeletonStyles.skeleton__item__light} />
                   </li>
                 ))}
               </motion.ul>

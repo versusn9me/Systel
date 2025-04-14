@@ -1,58 +1,58 @@
 /* eslint-disable indent */
-import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Link from 'next/link';
-import { useLang } from '@/hooks/useLang';
-import { IProductsListItemProps } from '@/types/modules';
-import ProductSubtitle from '@/components/elements/ProductSubtitle/ProductSubtitle';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
+import { useLang } from '@/hooks/useLang'
+import { IProductsListItemProps } from '@/types/modules'
+import ProductSubtitle from '@/components/elements/ProductSubtitle/ProductSubtitle'
 import {
   addOverflowHiddenToBody,
   formatPrice,
   isItemInList,
-} from '@/lib/utils/common';
-import ProductLabel from './ProductLabel';
-import ProductItemActionBtn from '@/components/elements/ProductItemActionBtn/ProductItemActionBtn';
-import ProductAvailable from '@/components/elements/ProductAvailable/ProductAvailable';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { showQuickViewModal } from '@/context/modals';
-import { setCurrentProduct } from '@/context/goods';
-import { productsWithoutSizes } from '@/constants/product';
-import { useCartAction } from '@/hooks/useCartAction';
-import { addProductToCartBySizeTable } from '@/lib/utils/cart';
-import { setIsAddToFavorites } from '@/context/favorites';
-import { useFavoritesAction } from '@/hooks/useFavoritesAction';
-import styles from '@/styles/product-list-item/index.module.scss';
-import stylesForAd from '@/styles/ad/index.module.scss';
-import { useComparisonAction } from '@/hooks/useComparisonAction';
+} from '@/lib/utils/common'
+import ProductLabel from './ProductLabel'
+import ProductItemActionBtn from '@/components/elements/ProductItemActionBtn/ProductItemActionBtn'
+import ProductAvailable from '@/components/elements/ProductAvailable/ProductAvailable'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { showQuickViewModal } from '@/context/modals'
+import { setCurrentProduct } from '@/context/goods'
+import { productsWithoutSizes } from '@/constants/product'
+import { useCartAction } from '@/hooks/useCartAction'
+import { addProductToCartBySizeTable } from '@/lib/utils/cart'
+import { setIsAddToFavorites } from '@/context/favorites'
+import { useFavoritesAction } from '@/hooks/useFavoritesAction'
+import styles from '@/styles/product-list-item/index.module.scss'
+import stylesForAd from '@/styles/ad/index.module.scss'
+import { useComparisonAction } from '@/hooks/useComparisonAction'
 
 const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
-  const { lang, translations } = useLang();
-  const isMedia800 = useMediaQuery(800);
-  const isTitleForNew = title === translations[lang].main_page.new_title;
+  const { lang, translations } = useLang()
+  const isMedia800 = useMediaQuery(800)
+  const isTitleForNew = title === translations[lang].main_page.new_title
   const { addToCartSpinner, setAddToCartSpinner, currentCartByAuth } =
-    useCartAction();
-  const isProductInCart = isItemInList(currentCartByAuth, item._id);
+    useCartAction()
+  const isProductInCart = isItemInList(currentCartByAuth, item._id)
   const {
     handleAddProductToFavorites,
     addToFavoritesSpinner,
     isProductInFavorites,
-  } = useFavoritesAction(item);
+  } = useFavoritesAction(item)
   const {
     handleAddToComparison,
     isProductInComparison,
     addToComparisonSpinner,
-  } = useComparisonAction(item);
+  } = useComparisonAction(item)
 
   const handleShowQuickViewModal = () => {
-    addOverflowHiddenToBody();
-    showQuickViewModal();
-    setCurrentProduct(item);
-  };
+    addOverflowHiddenToBody()
+    showQuickViewModal()
+    setCurrentProduct(item)
+  }
 
   const addToCart = () => {
-    setIsAddToFavorites(false);
-    addProductToCartBySizeTable(item, setAddToCartSpinner, 1);
-  };
+    setIsAddToFavorites(false)
+    addProductToCartBySizeTable(item, setAddToCartSpinner, 1)
+  }
 
   return (
     <>
@@ -76,7 +76,7 @@ const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
                 alt={item.name}
                 width={224}
                 height={275}
-                loading="lazy"
+                loading='lazy'
                 style={{ width: 224, height: 275, objectFit: 'cover' }}
               />
             </div>
@@ -142,7 +142,7 @@ const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
             {!isMedia800 && (
               <ProductItemActionBtn
                 text={translations[lang].product.quick_view}
-                iconClass="actions__btn_quick_view"
+                iconClass='actions__btn_quick_view'
                 callback={handleShowQuickViewModal}
               />
             )}
@@ -154,7 +154,7 @@ const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
             <img
               src={item.images[0].url}
               alt={item.name}
-              loading="lazy"
+              loading='lazy'
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </Link>
@@ -182,7 +182,7 @@ const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
               style={addToCartSpinner ? { minWidth: 125, height: 48 } : {}}
             >
               {addToCartSpinner ? (
-                <FontAwesomeIcon icon={faSpinner} spin color="#fff" />
+                <FontAwesomeIcon icon={faSpinner} spin color='#fff' />
               ) : isProductInCart ? (
                 translations[lang].product.in_cart
               ) : (
@@ -200,7 +200,7 @@ const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
         </li>
       )}
     </>
-  );
-};
+  )
+}
 
-export default ProductsListItem;
+export default ProductsListItem

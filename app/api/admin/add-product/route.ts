@@ -24,15 +24,17 @@ export async function POST(req: Request) {
     const newProduct = {
       ...reqBody,
       images: images
-        ? images.map((img: {imgId: string}) => ({
-          url: `${process.env.NEXT_PUBLIC_IMAGE_BASE_URLimages}?id=${img.imgId}`,
-          desc: reqBody.name,
-        }))
+        ? images.map((img: { imgId: string }) => ({
+            url: `${process.env.NEXT_PUBLIC_IMAGE_BASE_URLimages}?id=${img.imgId}`,
+            desc: reqBody.name,
+          }))
         : reqBody.images,
-      vendorCode: generateArticleCode(reqBody.type)
+      vendorCode: generateArticleCode(reqBody.type),
     }
 
-    const { insertedId } = await db.collection(reqBody.category).insertOne(newProduct)
+    const { insertedId } = await db
+      .collection(reqBody.category)
+      .insertOne(newProduct)
 
     return NextResponse.json(
       {

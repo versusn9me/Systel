@@ -59,12 +59,12 @@
   margin-right: 10px;
 }
 
-.header-profile__item__btn{
+.header-profile__item__btn {
   color: #000;
-  transition: color .2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .header-profile__item__btn:hover {
   color: #f29011;
-  transition: color .2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }

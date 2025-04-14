@@ -5,7 +5,7 @@
 body {
   font-family: Rostelecom Basis;
   font-weight: 400;
-  background-color: #E8E9dA;
+  background-color: #e8e9da;
   color: #000;
   min-height: 100vh;
   display: flex;
@@ -80,7 +80,7 @@ body::-webkit-scrollbar-thumb:hover {
 .size-table-overlay,
 .auth-overlay,
 .share-overlay {
-  background: #E8E9EA;
+  background: #e8e9ea;
   height: 100%;
   left: 0;
   opacity: 0;
@@ -112,7 +112,8 @@ body::-webkit-scrollbar-thumb:hover {
   z-index: 5;
 }
 
-.auth-overlay.overlay-active, .size-table-overlay.overlay-active {
+.auth-overlay.overlay-active,
+.size-table-overlay.overlay-active {
   z-index: 100;
 }
 
@@ -161,7 +162,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .sizes-table-btn {
-  color: #16D9A6;
+  color: #16d9a6;
   font-size: 14px;
   text-decoration-line: underline;
 }
@@ -214,7 +215,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .counter span {
-  color: rgba(255, 255, 255, 0.90);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 16px;
   font-weight: 400;
 }
@@ -226,7 +227,7 @@ body::-webkit-scrollbar-thumb:hover {
   right: 2px;
   width: 8px;
   height: 8px;
-  background-color: #FF0C0C;
+  background-color: #ff0c0c;
   border-radius: 50%;
 }
 
@@ -266,7 +267,9 @@ body::-webkit-scrollbar-thumb:hover {
 .swiper-slide-active .slide-popup {
   opacity: 1;
   visibility: visible;
-  transition: opacity .2s ease-in-out, visibility .2s ease-in-out;
+  transition:
+    opacity 0.2s ease-in-out,
+    visibility 0.2s ease-in-out;
 }
 
 @font-face {
@@ -274,7 +277,7 @@ body::-webkit-scrollbar-thumb:hover {
   font-family: Rostelecom Basis;
   font-style: normal;
   font-weight: 700;
-  src: url('../../public/fonts/Rostelecom-Basis-Bold.woff') format("woff");
+  src: url('../../public/fonts/Rostelecom-Basis-Bold.woff') format('woff');
 }
 
 @font-face {
@@ -282,7 +285,7 @@ body::-webkit-scrollbar-thumb:hover {
   font-family: Rostelecom Basis;
   font-style: normal;
   font-weight: 500;
-  src: url('../../public/fonts/Rostelecom-Basis-Medium.woff') format("woff");
+  src: url('../../public/fonts/Rostelecom-Basis-Medium.woff') format('woff');
 }
 
 @font-face {
@@ -290,7 +293,7 @@ body::-webkit-scrollbar-thumb:hover {
   font-family: Rostelecom Basis;
   font-style: normal;
   font-weight: 400;
-  src: url('../../public/fonts/Rostelecom-Basis-Regular.woff') format("woff");
+  src: url('../../public/fonts/Rostelecom-Basis-Regular.woff') format('woff');
 }
 
 .overflow-hidden {
@@ -298,7 +301,8 @@ body::-webkit-scrollbar-thumb:hover {
   padding-right: 8px;
 }
 
-.catalog-pagination-prev.disabled, .catalog-pagination-next.disabled {
+.catalog-pagination-prev.disabled,
+.catalog-pagination-next.disabled {
   display: none;
 }
 

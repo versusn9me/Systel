@@ -37,10 +37,10 @@ const SearchModal = () => {
     () =>
       productsBySearch.items?.length
         ? [
-          ...new Map(
-            productsBySearch.items.map((item) => [item.type, item])
-          ).values(),
-        ]
+            ...new Map(
+              productsBySearch.items.map((item) => [item.type, item])
+            ).values(),
+          ]
         : [],
     [productsBySearch.items]
   )
@@ -96,41 +96,65 @@ const SearchModal = () => {
           </span>
         </label>
         {!!searchedProductsCategories.length && (
-          <motion.ul {...basePropsForMotion} className='list-reset search-modal__links search-modal__categories'>
+          <motion.ul
+            {...basePropsForMotion}
+            className='list-reset search-modal__links search-modal__categories'
+          >
             {searchedProductsCategories.map((category) => (
               <li key={category}>
                 <Link
                   href={`/catalog/${category}`}
                   onClick={handleCloseSearchModal}
                 >
-                  {(translations[lang].breadcrumbs as { [index: string]: string })[category]}
+                  {
+                    (
+                      translations[lang].breadcrumbs as {
+                        [index: string]: string
+                      }
+                    )[category]
+                  }
                 </Link>
               </li>
             ))}
           </motion.ul>
         )}
         {!!searchedProductsTypes.length && (
-          <motion.ul {...basePropsForMotion} className='list-reset search-modal__links'>
+          <motion.ul
+            {...basePropsForMotion}
+            className='list-reset search-modal__links'
+          >
             {searchedProductsTypes.map((item) => (
               <li key={item.type}>
                 <Link
                   href={`/catalog/${item.category}?type=${item.type}`}
                   onClick={handleCloseSearchModal}
                 >
-                  {(translations[lang].comparison as { [index: string]: string })[item.type]}
+                  {
+                    (
+                      translations[lang].comparison as {
+                        [index: string]: string
+                      }
+                    )[item.type]
+                  }
                 </Link>
               </li>
             ))}
           </motion.ul>
         )}
         <div className='search-modal__bottom'>
-          {(spinner) && (
-            <motion.span className='search-modal__spinner' {...basePropsForMotion}>
+          {spinner && (
+            <motion.span
+              className='search-modal__spinner'
+              {...basePropsForMotion}
+            >
               <FontAwesomeIcon icon={faSpinner} spin color='#fff' size='3x' />
             </motion.span>
           )}
           {!spinner && (
-            <motion.ul {...basePropsForMotion} className='list-reset search-modal__results'>
+            <motion.ul
+              {...basePropsForMotion}
+              className='list-reset search-modal__results'
+            >
               {(productsBySearch.items || []).map((item) => (
                 <li key={item._id} className='search-modal__results__item'>
                   <Link
