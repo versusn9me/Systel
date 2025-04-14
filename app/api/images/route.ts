@@ -1,67 +1,28 @@
-// app/api/images/route.ts
-import { NextResponse } from 'next/server';
-import clientPromise from '@/lib/mongodb';
-import { getDbAndReqBody } from '@/lib/utils/api-routes';
+import { NextResponse } from 'next/server'
+import clientPromise from '@/lib/mongodb'
+import { getDbAndReqBody } from '@/lib/utils/api-routes'
 
 export async function GET(req: Request) {
   try {
-    const { db } = await getDbAndReqBody(clientPromise, null);
-    const url = new URL(req.url);
-    const imgId = url.searchParams.get('id');
-
-    if (!imgId) {
-      return new NextResponse(null, {
-        status: 400,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-    }
-
-    const image = await db.collection('images').findOne({ imgId });
+    const { db } = await getDbAndReqBody(clientPromise, null)
+    const imgId = req.url.split('id=')[1]
+    const image = await db.collection('images').findOne({ imgId })
 
     if (!image) {
-      return new NextResponse(null, {
-        status: 404,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+      return NextResponse.json({ status: 404 })
     }
 
-    // Если хранится публичный URL (например, из Cloudinary), перенаправь на него
-    if (image.url && !image.dataUrl) {
-      return NextResponse.redirect(image.url);
-    }
-
-    // Извлечём Base64-данные
-    const base64Data = image.dataUrl.replace(/^data:image\/\w+;base64,/, '');
-    const imageBuffer = Buffer.from(base64Data, 'base64');
-
-    // Определи Content-Type на основе mime-типа из dataUrl
-    const mimeTypeMatch = image.dataUrl.match(/^data:image\/(\w+);base64,/);
-    const mimeType = mimeTypeMatch ? `image/${mimeTypeMatch[1]}` : 'image/jpeg';
+    const base64Data = image.dataUrl.replace(/^data:image\/\w+;base64,/, '')
+    const imageBuffer = Buffer.from(base64Data, 'base64')
 
     return new NextResponse(imageBuffer, {
-      status: 200,
       headers: {
-        'Content-Type': mimeType,
-        'Content-Length': imageBuffer.length.toString(),
-        'Cache-Control': 'public, max-age=31536000, immutable',
-        'Access-Control-Allow-Origin': '*', // Для устранения CORS-проблем
+        'Content-Type': `image/${image.title.split('.')[1]}`,
       },
-    });
+    })
   } catch (error) {
-    return new NextResponse(
-      JSON.stringify({ error: (error as Error).message }),
-      {
-        status: 500,
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    throw new Error((error as Error).message)
   }
 }
 
-export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic'
