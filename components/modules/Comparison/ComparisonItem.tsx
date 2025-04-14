@@ -35,16 +35,16 @@ const ComparisonItem = ({ item }: { item: IComparisonItem }) => {
     () =>
       productsWithoutSizes.includes(item.characteristics.type)
         ? currentCartByAuth.find(
-            (cartItem) => cartItem.productId === item.productId
-          )
+          (cartItem) => cartItem.productId === item.productId
+        )
         : currentCartByAuth.find(
-            (cartItem) =>
-              cartItem.productId === item.productId &&
+          (cartItem) =>
+            cartItem.productId === item.productId &&
               Object.entries(item.sizes)
                 .filter(([, value]) => value)
                 .map(([key]) => key)
                 .includes(cartItem.size)
-          ),
+        ),
     [currentCartByAuth, item.characteristics.type, item.productId, item.sizes]
   )
 

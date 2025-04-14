@@ -25,9 +25,9 @@ export async function POST(req: Request) {
       ...reqBody,
       images: images
         ? images.map((img: { imgId: string }) => ({
-            url: `${process.env.NEXT_PUBLIC_IMAGE_BASE_URLimages}?id=${img.imgId}`,
-            desc: reqBody.name,
-          }))
+          url: `${process.env.NEXT_PUBLIC_IMAGE_BASE_URLimages}?id=${img.imgId}`,
+          desc: reqBody.name,
+        }))
         : reqBody.images,
       vendorCode: generateArticleCode(reqBody.type),
     }

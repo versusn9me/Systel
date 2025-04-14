@@ -37,10 +37,10 @@ const SearchModal = () => {
     () =>
       productsBySearch.items?.length
         ? [
-            ...new Map(
-              productsBySearch.items.map((item) => [item.type, item])
-            ).values(),
-          ]
+          ...new Map(
+            productsBySearch.items.map((item) => [item.type, item])
+          ).values(),
+        ]
         : [],
     [productsBySearch.items]
   )

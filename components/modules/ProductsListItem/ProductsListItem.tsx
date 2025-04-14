@@ -2,6 +2,7 @@
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLang } from '@/hooks/useLang'
 import { IProductsListItemProps } from '@/types/modules'
 import ProductSubtitle from '@/components/elements/ProductSubtitle/ProductSubtitle'
@@ -71,13 +72,11 @@ const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
               subtitleRectClassName={styles.list__item_ad__subtitle__rect}
             />
             <div className={styles.list__item_ad__img}>
-              <img
+              <Image
                 src={item.images[0].url}
                 alt={item.name}
                 width={224}
                 height={275}
-                loading='lazy'
-                style={{ width: 224, height: 275, objectFit: 'cover' }}
               />
             </div>
             <p className={styles.list__item_ad__title}>
@@ -151,12 +150,7 @@ const ProductsListItem = ({ item, title }: IProductsListItemProps) => {
             href={`/catalog/${item.category}/${item._id}`}
             className={styles.list__item__img}
           >
-            <img
-              src={item.images[0].url}
-              alt={item.name}
-              loading='lazy'
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
+            <Image src={item.images[0].url} alt={item.name} fill />
           </Link>
           <div className={styles.list__item__inner}>
             <h3 className={styles.list__item__title}>

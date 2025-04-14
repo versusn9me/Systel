@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import Link from 'next/link'
 import AllLink from '@/components/elements/AllLink/AllLink'
 import useImagePreloader from '@/hooks/useImagePreloader'
@@ -46,15 +47,11 @@ const Categories = () => {
                 href='/catalog/cloth'
                 className={`${styles.categories__right} ${styles.categories__img} ${imgSpinnerClass}`}
               >
-                <img
-                  src={img1.src}
+                <Image
+                  src={img1}
                   alt='Cloth'
-                  className={`transition-opacity opacity-0 duration ${
-                    !imgSpinner ? 'opacity-100' : ''
-                  }`}
+                  className='transition-opacity opacity-0 duration'
                   onLoad={handleLoadingImageComplete}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  loading='lazy'
                 />
                 <span>{translations[lang].main_page.category_cloth}</span>
               </Link>
@@ -64,19 +61,11 @@ const Categories = () => {
                     href='/catalog/accessories'
                     className={`${styles.categories__left__top__right} ${styles.categories__img} ${imgSpinnerClass}`}
                   >
-                    <img
-                      src={img2.src}
+                    <Image
+                      src={img2}
                       alt='Accessories'
-                      className={`transition-opacity opacity-0 duration ${
-                        !imgSpinner ? 'opacity-100' : ''
-                      }`}
+                      className='transition-opacity opacity-0 duration'
                       onLoad={handleLoadingImageComplete}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                      }}
-                      loading='lazy'
                     />
                     <span>
                       {translations[lang].main_page.category_accessories}
@@ -86,19 +75,11 @@ const Categories = () => {
                     href='/catalog/souvenirs'
                     className={`${styles.categories__left__top__left} ${styles.categories__img} ${imgSpinnerClass}`}
                   >
-                    <img
-                      src={img3.src}
+                    <Image
+                      src={img3}
                       alt='Souvenirs'
-                      className={`transition-opacity opacity-0 duration ${
-                        !imgSpinner ? 'opacity-100' : ''
-                      }`}
+                      className='transition-opacity opacity-0 duration'
                       onLoad={handleLoadingImageComplete}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                      }}
-                      loading='lazy'
                     />
                     <span>
                       {translations[lang].main_page.category_souvenirs}
@@ -109,19 +90,11 @@ const Categories = () => {
                   href='/catalog/office'
                   className={`${styles.categories__left__bottom} ${styles.categories__img} ${imgSpinnerClass}`}
                 >
-                  <img
-                    src={img4.src}
+                  <Image
+                    src={img4}
                     alt='Office'
-                    className={`transition-opacity opacity-0 duration ${
-                      !imgSpinner ? 'opacity-100' : ''
-                    }`}
+                    className='transition-opacity opacity-0 duration'
                     onLoad={handleLoadingImageComplete}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                    }}
-                    loading='lazy'
                   />
                   <span>{translations[lang].main_page.category_office}</span>
                 </Link>
