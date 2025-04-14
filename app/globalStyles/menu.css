@@ -27,7 +27,7 @@
 }
 
 .nav-menu::-webkit-scrollbar-track {
-  background-color: #101828;
+  background-color: #E8E9dA;
 }
 
 .nav-menu::-webkit-scrollbar-thumb {
@@ -56,7 +56,7 @@
 }
 
 .nav-menu:before {
-  background-color: #101828;
+  background-color: #E8E9dA;
 }
 
 .nav-menu.open {
@@ -86,7 +86,7 @@
 }
 
 .nav-menu__close::before {
-  background-color: #E8E9EA;
+  background-color: #fff;
   content: '';
   height: 100%;
   width: 100%;
@@ -175,7 +175,7 @@
 
 .nav-menu__list__item__btn:hover {
   transition: .2s ease-in-out;
-  color: #E8E9EA;
+  color: #000;
 }
 
 .nav-menu__accordion {
@@ -221,7 +221,7 @@
 
 .nav-menu__accordion__item__title:hover {
   transition: .2s ease-in-out color;
-  color: #E8E9EA;
+  color: #000;
 }
 
 .nav-menu__accordion__item__list__item:not(:last-child) {
@@ -229,7 +229,7 @@
 }
 
 .nav-menu__accordion__item__list__item__link {
-  color: #E8E9EA;
+  color: #777C85;
   font-size: 16px;
   font-weight: 400;
   transition: .2s ease-in-out color;

@@ -5,7 +5,7 @@
 .footer__top {
   padding-top: 15px;
   padding-bottom: 30px;
-  background-color: #333A47;
+  background-color: #E2E1d8;
 }
 
 .footer__top__container {
@@ -34,7 +34,7 @@
 }
 
 .footer__contacts a, .footer__links a {
-  color: #E8E9EA;
+  color: #333A47;
   font-size: 16px;
   text-decoration: none;
   display: inline-block;
@@ -101,7 +101,7 @@
 .footer__bottom {
   padding-top: 16px;
   padding-bottom: 40px;
-  background-color: #242C39;
+  background-color: #4e4e45;
 }
 
 .footer__bottom__container {

@@ -5,8 +5,8 @@
 body {
   font-family: Rostelecom Basis;
   font-weight: 400;
-  background-color: #1D2533;
-  color: #E8E9EA;
+  background-color: #E8E9dA;
+  color: #000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -70,7 +70,7 @@ body::-webkit-scrollbar-thumb:hover {
 .site-title {
   margin: 0;
   margin-bottom: 40px;
-  color: #E8E9EA;
+  color: #000;
   font-size: 42px;
   font-weight: 700;
 }
@@ -80,7 +80,7 @@ body::-webkit-scrollbar-thumb:hover {
 .size-table-overlay,
 .auth-overlay,
 .share-overlay {
-  background: #16181b;
+  background: #E8E9EA;
   height: 100%;
   left: 0;
   opacity: 0;
