@@ -5,7 +5,7 @@ export interface IFavoriteItem {
   clientId: string
   userId: string
   productId: string
-  image: string
+  image: string | { url: string; desc?: string }
   name: string
   size: string
   price: string

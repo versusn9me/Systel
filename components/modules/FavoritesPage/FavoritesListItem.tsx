@@ -110,7 +110,7 @@ const FavoritesListItem = ({ item }: { item: IFavoriteItem }) => {
       />
       <div className={styles.favorites__list__item__img}>
         <Image
-          src={item.image}
+          src={typeof item.image === 'string' ? item.image : item.image.url}
           alt={item.name}
           width={imgSize}
           height={imgSize}
