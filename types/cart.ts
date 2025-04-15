@@ -5,7 +5,7 @@ export interface ICartItem {
   clientId: string
   userId: string
   productId: string
-  image: string
+  image: string | { url: string; desc?: string }
   name: string
   size: string
   count: string | number

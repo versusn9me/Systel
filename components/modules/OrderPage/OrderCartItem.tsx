@@ -17,7 +17,12 @@ const OrderCartItem = ({ item, position }: IOrderCartItemProps) => {
             {position}.
           </span>
           <div className={styles.order__list__item__list__item__img}>
-            <Image src={item.image} alt={item.name} width={156} height={156} />
+            <Image
+              src={typeof item.image === 'string' ? item.image : item.image.url}
+              alt={item.name}
+              width={156}
+              height={156}
+            />
           </div>
           <div className={styles.order__list__item__list__item__inner}>
             <span className={styles.order__list__item__list__item__name}>
@@ -51,7 +56,12 @@ const OrderCartItem = ({ item, position }: IOrderCartItemProps) => {
         <tr>
           <td className={styles.order__list__item__table__name}>
             <span>{position}.</span>
-            <Image src={item.image} alt={item.name} width={109} height={109} />
+            <Image
+              src={typeof item.image === 'string' ? item.image : item.image.url}
+              alt={item.name}
+              width={109}
+              height={109}
+            />
             <span>{item.name}</span>
           </td>
           <td className={styles.order__list__item__table__block}>

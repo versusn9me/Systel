@@ -24,7 +24,12 @@ const CartPopupItem = ({ item }: { item: ICartItem }) => {
         callback={handleDeleteCartItem}
       />
       <div className='cart-list__item__img'>
-        <Image src={item.image} alt={item.name} width={96} height={96} />
+        <Image
+          src={typeof item.image === 'string' ? item.image : item.image.url}
+          alt={item.name}
+          width={96}
+          height={96}
+        />
       </div>
       <div className='cart-list__item__inner'>
         <Link

@@ -20,6 +20,7 @@ const CartListItem = ({ item }: { item: ICartItem }) => {
   } = useCartItemAction(item)
   const isMedia530 = useMediaQuery(530)
   const imageSize = isMedia530 ? 132 : 160
+  console.log('Image src:', item.image)
 
   return (
     <>
@@ -38,7 +39,7 @@ const CartListItem = ({ item }: { item: ICartItem }) => {
         className={`${styles.cart__list__item__img} ${styles.cart__list__item__block}`}
       >
         <Image
-          src={item.image}
+          src={typeof item.image === 'string' ? item.image : item.image.url}
           alt={item.name}
           width={imageSize}
           height={imageSize}

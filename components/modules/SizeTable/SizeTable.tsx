@@ -11,7 +11,11 @@ import { addProductToFavorites } from '@/context/favorites'
 import { useGoodsByAuth } from '@/hooks/useGoodsByAuth'
 import { addFavoriteItemToLS } from '@/lib/utils/favorites'
 import { useFavoritesAction } from '@/hooks/useFavoritesAction'
-import { $isAddToFavorites, $favorites, $favoritesFromLS } from '@/context/favorites/state'
+import {
+  $isAddToFavorites,
+  $favorites,
+  $favoritesFromLS,
+} from '@/context/favorites/state'
 import { $showQuickViewModal } from '@/context/modals/state'
 import { $sizeTableSizes } from '@/context/sizeTable/state'
 import styles from '@/styles/size-table/index.module.scss'
@@ -28,9 +32,10 @@ const SizeTable = () => {
     addToCartSpinner,
     currentCartItems,
     updateCountSpinner,
-    product
+    product,
   } = useCartAction(true)
-  const { addToFavoritesSpinner, setAddToFavoritesSpinner } = useFavoritesAction(product)
+  const { addToFavoritesSpinner, setAddToFavoritesSpinner } =
+    useFavoritesAction(product)
   const productSizes = useUnit($sizeTableSizes)
   const isHeaddressType = productSizes.type === 'headdress'
   const currentFavoritesByAuth = useGoodsByAuth($favorites, $favoritesFromLS)
@@ -53,7 +58,8 @@ const SizeTable = () => {
 
   const isSizeSelected = (size: string) => selectedSize === size
 
-  const checkInFavorites = (size: string) => currentFavoriteItems.find((item) => item.size === size)
+  const checkInFavorites = (size: string) =>
+    currentFavoriteItems.find((item) => item.size === size)
 
   const headdressSizes = [
     {
@@ -264,11 +270,11 @@ const SizeTable = () => {
             {isHeaddressType
               ? headdressSizes.map((headdressSizesItem) => (
                 <tr
-                  key={headdressSizesItem.id}
-                  {...(trProps(
-                    headdressSizesItem
-                  ) as React.HTMLAttributes<HTMLTableRowElement>)}
-                >
+                    key={headdressSizesItem.id}
+                    {...(trProps(
+                      headdressSizesItem
+                    ) as React.HTMLAttributes<HTMLTableRowElement>)}
+                  >
                   <td>
                     {headdressSizesItem.isInFavorites && (
                       <span className={styles.size_table__favorite} />
@@ -283,7 +289,7 @@ const SizeTable = () => {
                     {headdressSizesItem.manufacturerSize}
                   </td>
                 </tr>
-              ))
+                ))
               : dressSizes.map((item) => (
                 <tr
                     key={item.id}
@@ -308,16 +314,29 @@ const SizeTable = () => {
                     {item.hipGirth}
                   </td>
                 </tr>
-              ))}
+                ))}
           </tbody>
         </table>
       </div>
       <AddToCartBtn
         className={`${styles.size_table__btn} ${styles.size_table__btn_favorite}`}
-        handleAddToCart={isAddToFavorites ? handleAddProductToFavorites : addToCart}
-        addToCartSpinner={addToCartSpinner || updateCountSpinner || addToFavoritesSpinner}
-        btnDisabled={!!!selectedSize || addToCartSpinner || updateCountSpinner || addToFavoritesSpinner}
-        text={isAddToFavorites ? translations[lang].product.to_favorite : translations[lang].product.to_cart}
+        handleAddToCart={
+          isAddToFavorites ? handleAddProductToFavorites : addToCart
+        }
+        addToCartSpinner={
+          addToCartSpinner || updateCountSpinner || addToFavoritesSpinner
+        }
+        btnDisabled={
+          !!!selectedSize ||
+          addToCartSpinner ||
+          updateCountSpinner ||
+          addToFavoritesSpinner
+        }
+        text={
+          isAddToFavorites
+            ? translations[lang].product.to_favorite
+            : translations[lang].product.to_cart
+        }
       />
     </div>
   )
